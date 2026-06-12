@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Safiya Abdullah | Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+ *{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:
+    radial-gradient(circle at top left, rgba(168,85,247,0.12), transparent 45%),
+    radial-gradient(circle at bottom right, rgba(99,102,241,0.10), transparent 45%),
+    #0b0b12;
+  color:#e5e7eb;
+  font-size:16px;
+  line-height:1.8;
+}
+
+/* TEXT */
+p{
+  color:#9ca3af;
+  line-height:1.8;
+}
+
+h1,h2,h3,h4{
+  color:#ffffff;
+}
+
+span{
+  color:#a855f7;
+}
+
+/* COMMON LAYOUT */
+section,
+.hero{
+  width:90%;
+  max-width:1100px;
+  margin:auto;
+}
+
+section{
+  padding:90px 0;
+  position:relative;
+}
+
+section::after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:10%;
+  width:80%;
+  height:1px;
+  background: linear-gradient(90deg, transparent, rgba(168,85,247,0.35), transparent);
+}
+
+.section-title{
+  font-size:2rem;
+  margin-bottom:25px;
+}
+
+/* CARD SYSTEM */
+.card,
+.project,
+.contact-card,
+.what-item{
+  background: linear-gradient(145deg, #0f0f1a, #0b0b14);
+  border: 1px solid rgba(168,85,247,0.18);
+  border-radius:16px;
+  transition:0.3s ease;
+  box-shadow:
+    0 0 12px rgba(168,85,247,0.08),
+    inset 0 0 10px rgba(168,85,247,0.03);
+}
+
+.card,
+.contact-card{
+  padding:25px;
+}
+
+/* HOVER EFFECT */
+.card:hover,
+.project:hover,
+.contact-card:hover,
+.what-item:hover{
+  transform:translateY(-6px);
+  border:1px solid rgba(168,85,247,0.6);
+  box-shadow:
+    0 0 18px rgba(168,85,247,0.25),
+    0 0 40px rgba(168,85,247,0.12),
+    inset 0 0 12px rgba(168,85,247,0.05);
+}
+
+/* NAVBAR */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 5%;
+  background:#0f0f19;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.logo{
+  font-size:1.1rem;
+  font-weight:700;
+}
+
+/* NAV LINKS */
+.nav-links{
+  display:flex;
+  gap:20px;
+  list-style:none;
+}
+
+.nav-links a{
+  color:#9ca3af;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.nav-links a:hover{
+  color:#fff;
+}
+
+/* BUTTONS */
+.btn,
+.project-btn{
+  background:linear-gradient(135deg,#a855f7,#6d28d9);
+  color:#fff;
+  text-decoration:none;
+  border-radius:10px;
+  transition:0.3s;
+  box-shadow:0 0 12px rgba(168,85,247,0.35);
+}
+
+.btn{
+  padding:10px 18px;
+}
+
+.project-btn{
+  padding:8px 14px;
+  font-size:.9rem;
+}
+
+.btn:hover,
+.project-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 22px rgba(168,85,247,0.6);
+}
+
+.btn-outline{
+  border:1px solid #a855f7;
+  padding:10px 18px;
+  border-radius:8px;
+  text-decoration:none;
+  color:white;
+  transition:.3s;
+}
+
+.btn-outline:hover{
+  background:#a855f7;
+  box-shadow:0 0 15px rgba(168,85,247,0.4);
+}
+
+/* HERO */
+.hero{
+  min-height:90vh;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:50px;
+}
+
+.hero-text h1{
+  font-size:3rem;
+}
+
+.hero-text h3{
+  color:#a855f7;
+}
+
+.hero-buttons{
+  display:flex;
+  gap:15px;
+  margin-top:25px;
+  flex-wrap:wrap;
+}
+
+/* HERO IMAGE */
+.hero-card{
+  width:320px;
+  height:320px;
+  border-radius:50%;
+  overflow:hidden;
+  border:2px solid #a855f7;
+  box-shadow:0 0 25px rgba(168,85,247,0.4);
+}
+
+.hero-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* WHAT I DO */
+.what-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.what-item{
+  padding:25px;
+  text-align:center;
+}
+
+/* SKILLS */
+.skill{
+  margin-bottom:20px;
+}
+
+.bar{
+  height:10px;
+  background:#1f1f35;
+  border-radius:20px;
+  margin-top:8px;
+}
+
+.bar div{
+  height:100%;
+  background:#a855f7;
+  border-radius:20px;
+  box-shadow:0 0 10px rgba(168,85,247,0.5);
+}
+
+/* LEARNING */
+.learning-list{
+  padding-left:20px;
+}
+
+.learning-list li{
+  margin:12px 0;
+}
+
+/* PROJECTS */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.project{
+  padding:20px;
+}
+
+/* PROJECT TOP */
+.project-top{
+  height:120px;
+  background:linear-gradient(135deg,#4338ca,#7c3aed);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:2.5rem;
+  box-shadow: inset 0 0 30px rgba(168,85,247,0.2);
+}
+
+.project-content{
+  padding:20px;
+}
+
+.project-buttons{
+  display:flex;
+  gap:10px;
+  margin-top:15px;
+}
+
+.project-icon{
+  width:40px;
+  height:40px;
+  border-radius:8px;
+  border:1px solid rgba(168,85,247,0.3);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-decoration:none;
+  color:white;
+}
+
+/* =========================
+   AWARDS & CERTIFICATES
+========================= */
+
+.awards-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  margin-top:20px;
+}
+
+.award-card{
+  background: linear-gradient(145deg, #0f0f1a, #0b0b14);
+  border: 1px solid rgba(168,85,247,0.18);
+  border-radius:16px;
+  padding:25px;
+  transition:0.3s ease;
+  box-shadow:
+    0 0 12px rgba(168,85,247,0.08),
+    inset 0 0 10px rgba(168,85,247,0.03);
+  text-align:center;
+}
+
+.award-card:hover{
+  transform:translateY(-6px);
+  border:1px solid rgba(168,85,247,0.6);
+  box-shadow:
+    0 0 18px rgba(168,85,247,0.25),
+    0 0 40px rgba(168,85,247,0.12),
+    inset 0 0 12px rgba(168,85,247,0.05);
+}
+
+.award-icon{
+  font-size:40px;
+  margin-bottom:10px;
+  color:#a855f7;
+}
+
+.award-card h3{
+  color:#ffffff;
+  margin-bottom:10px;
+}
+
+.award-card p{
+  color:#9ca3af;
+  margin-bottom:15px;
+}
+
+.award-btn{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:10px;
+  text-decoration:none;
+  color:#fff;
+  background:linear-gradient(135deg,#a855f7,#6d28d9);
+  box-shadow:0 0 12px rgba(168,85,247,0.35);
+  transition:0.3s;
+}
+
+.award-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 22px rgba(168,85,247,0.6);
+}
+
+/* CONTACT */
+.contact-wrapper{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+}
+
+.contact-card{
+  background:#0d0d18;
+}
+
+.contact-item{
+  margin-bottom:20px;
+}
+
+/* SOCIAL */
+.social-box{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:20px;
+  height:100%;
+}
+
+.social-circle{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  border:1px solid rgba(168,85,247,0.4);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  transition:.3s;
+}
+
+.social-circle:hover{
+  background:#a855f7;
+  box-shadow:0 0 18px rgba(168,85,247,0.6);
+  transform:translateY(-4px);
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:25px;
+  color:#9ca3af;
+  border-top:1px solid #232336;
+}
+
+/* HAMBURGER */
+.menu-btn{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .hero{
+    flex-direction:column;
+    text-align:center;
+    padding-top:50px;
+  }
+
+  .hero-card{
+    width:250px;
+    height:250px;
+  }
+
+  .hero-buttons{
+    justify-content:center;
+  }
+
+  .what-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .projects,
+  .contact-wrapper{
+    grid-template-columns:1fr;
+  }
+
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:70px;
+    right:20px;
+    flex-direction:column;
+    background:#121225;
+    padding:20px;
+    border-radius:12px;
+    border:1px solid #232336;
+  }
+
+  .nav-links.show{
+    display:flex;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .nav-btn{
+    display:none;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">
+  &lt; Safiya <span>Abdullah</span> /&gt;
+</div>
+
+<ul class="nav-links" id="nav-links">
+  <li><a href="#Home">Home</a></li>
+  <li><a href="#about">About</a></li>
+  <li><a href="#skills">Skills</a></li>
+  <li><a href="#projects">Projects</a></li>
+  <li><a href="#awards ">Awards</a></li>
+  <li><a href="#contact">Contact</a></li>
+</ul>
+
+<a href="#" class="btn nav-btn">Resume</a>
+
+<div class="menu-btn" id="menu-btn">
+  ☰
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<section id="Home" class="hero" >
+
+
+
+<div class="hero-text">
+
+  <p class="hero-tag">
+    👋 Hello, I'm
+  </p>
+
+  <h1>
+    Safiya <span>Abdullah</span>
+  </h1>
+
+  <h3>Beginner Web Developer</h3>
+
+  <p>
+    Aspiring web developer learning to build reponsive and user-friendly website 
+          with a focus on clean design.
+  </p>
+
+  <div class="hero-buttons">
+    <a href="#projects" class="btn">View My Work</a>
+    <a href="#" class="btn-outline">Download CV</a>
+  </div>
+
+</div>
+
+<div class="hero-card">
+  <img
+    src="../Portfolio/Safiya.jpg.jpeg"
+    alt="Safiya Abdullah">
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2 class="section-title">
+  About Me
+</h2>
+
+<div class="card">
+  <p>
+    I am a front-end web developer focused on building responsive and accessible websites using HTML, CSS, and JavaScript. 
+              I also have experience with MySQL and I am currently learning Java. I enjoy turning ideas into clean, functional designs while 
+              improving my skills through real projects.
+  </p>
+</div>
+
+
+<!-- WHAT I DO -->
+
+<section>
+
+<h2 class="section-title">
+  What I Do
+</h2>
+
+<div class="what-grid">
+
+<div class="what-item">
+📚
+<h4>Learn</h4>
+</div>
+
+<div class="what-item">
+💻
+<h4>Build</h4>
+</div>
+
+<div class="what-item">
+🚀
+<h4>Improve</h4>
+</div>
+
+<div class="what-item">
+🧠
+<h4>Solve</h4>
+</div>
+
+</div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<h2 class="section-title">
+  Skills
+</h2>
+
+<p class="skill-text">
+These are the technologies and tools I currently use while learning and building projects.
+</p>
+
+<div class="skill">
+HTML
+<div class="bar">
+<div style="width:90%"></div>
+</div>
+</div>
+
+<div class="skill">
+CSS
+<div class="bar">
+<div style="width:85%"></div>
+</div>
+</div>
+
+<div class="skill">
+MySQL Database
+<div class="bar">
+<div style="width:50%"></div>
+</div>
+</div>
+
+<div class="skill">
+Responsive Design
+<div class="bar">
+<div style="width:60%"></div>
+</div>
+</div>
+
+</section>
+
+<!-- CURRENTLY LEARNING -->
+
+<section>
+
+<h2 class="section-title">
+  Currently Learning
+</h2>
+
+<div class="card">
+
+<ul class="learning-list">
+<li>Java Programming</li>
+<li>Java Script</li>
+<li>Git & GitHub</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<h2 class="section-title">
+  Projects
+</h2>
+
+<div class="projects">
+
+<div class="project">
+
+<div class="project-top">
+🌐
+</div>
+
+<div class="project-content">
+
+<h3>Portfolio Website</h3>
+
+<p>
+Currently building my personal portfolio website.
+</p>
+
+<div class="project-buttons">
+<a href="#" class="project-btn">In Progress</a>
+<a href="#" class="project-icon">💻</a>
+</div>
+
+</div>
+
+</div>
+
+<div class="project">
+
+<div class="project-top">
+📝
+</div>
+
+<div class="project-content">
+
+<h3>Blog Page</h3>
+
+<p>
+Responsive blog page created for coursework.
+</p>
+
+<div class="project-buttons">
+<a href="#" class="project-btn">View</a>
+<a href="#" class="project-icon">💻</a>
+</div>
+
+</div>
+
+</div>
+
+<div class="project">
+
+<div class="project-top">
+🔍
+</div>
+
+<div class="project-content">
+
+<h3>Research Page</h3>
+
+<p>
+Research-focused webpage built for academic coursework.
+</p>
+
+<div class="project-buttons">
+<a href="#" class="project-btn">View</a>
+<a href="#" class="project-icon">💻</a>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- AWARDS & CERTIFICATES -->
+
+<section id="awards">
+
+<h2 class="section-title">
+  Awards & Certificates
+</h2>
+
+<div class="awards-grid">
+
+  <div class="award-card">
+    <div class="award-icon">🎓</div>
+
+    <h3>GPPC College Certificate</h3>
+
+    <p>
+      Received certificate for participation/completion of GPPC college program.
+    </p>
+
+    <a href="#" class="award-btn">View Certificate</a>
+  </div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2 class="section-title">
+  Contact Me
+</h2>
+
+<div class="contact-wrapper">
+
+<div class="contact-card">
+
+<div class="contact-item">
+<h4>Contact number</h4>
+<p>9705259207</p>
+</div>
+
+<div class="contact-item">
+<h4>Email</h4>
+<p>abdullahsafia65@gmail.com</p>
+</div>
+
+<div class="contact-item">
+<h4>GitHub</h4>
+<p>https://github.com/</p>
+</div>
+
+<div class="contact-item">
+<h4>LinkedIn</h4>
+<p>www.linkedin.com/in/
+safiya-abdullah-47ab683a7
+</p>
+</div>
+
+<div class="contact-item">
+<h4>Location</h4>
+<p>Kathmandu, Nepal (Dillibazar)</p>
+</div>
+
+</div>
+
+<div class="contact-card">
+
+<div class="social-box">
+
+<a href="#" class="social-circle"></a>
+<a href="#" class="social-circle"></a>
+<a href="#" class="social-circle"></a>
+<a href="#" class="social-circle"></a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Safiya Abdullah. All rights reserved.
+</footer>
+
+
+
+</body>
+</html>
